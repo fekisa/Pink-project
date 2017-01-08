@@ -1,0 +1,79 @@
+@import "../mixins";
+@import "../variables";
+
+
+.copyright {
+  margin: 0 auto;
+}
+
+.copyright__text {
+  display: inline-block;
+  margin-right: 10px;
+  margin-left: 0;
+  font-weight: @normal;
+  font-size: @font-size;
+  vertical-align: middle;
+}
+
+.copyright__svg {
+  width: 29px;
+  height: 35px;
+}
+
+.copyright__link {
+  display: inline-block;
+  margin-top: -6px;
+  font-size: 0;
+  vertical-align: middle;
+  text-decoration: none;
+
+  &:hover {
+    .copyright__svg {
+      fill: @dark-blue;
+    }
+  }
+
+  &:active {
+    .copyright__svg {
+      opacity: 0.3;
+    }
+  }
+}
+
+.copyright__svg {
+  vertical-align: middle;
+  fill: @red;
+}
+
+//TABLET MODE //
+
+@media @tablet-widths {
+  .copyright {
+    margin: 0;
+    margin-top: 10px;
+  }
+
+  .copyright__text {
+    margin-left: 16px;
+  }
+
+  .copyright__link {
+  }
+}
+
+//DESKTOP MODE//
+
+@media @desktop-widths {
+  .copyright__svg {
+    width: 35px;
+    height: 35px;
+  }
+
+  .copyright__text {
+    font-size: @font-size--big;
+  }
+
+  .copyright__link {
+    margin-top: 5px;
+  }
+}

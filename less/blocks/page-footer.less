@@ -1,0 +1,102 @@
+@import "../mixins";
+@import "../variables";
+
+.page-footer {
+  padding-top: 38px;
+  padding-bottom: 38px;
+
+  &--hidden {
+    display: none;
+  }
+}
+
+.page-footer__wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  .container-fluid;
+}
+
+.page-footer__logo {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 38px;
+}
+
+.page-footer__logo .logo__tablet {
+  display: block;
+}
+
+.logo__footer {
+  width: 147px;
+  height: 40px;
+  fill: #283645;
+
+  &:hover {
+    fill: @red;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}
+
+//TABLET MODE//
+
+@media @tablet-widths {
+  .page-footer {
+    padding-top: 38px;
+
+    &--hidden {
+      display: block;
+    }
+  }
+
+  .page-footer__wrapper {
+    flex-direction: row;
+  }
+
+  .page-footer__logo {
+    margin: 0;
+  }
+
+  .logo__footer {
+    width: 147px;
+    height: 40px;
+    fill: #283645;
+
+    &:hover {
+      fill: @red;
+    }
+
+    &:active {
+      opacity: 0.3;
+    }
+  }
+
+  .logo__glasses {
+    fill: @red;
+  }
+}
+
+//DESKTOP MODE//
+
+@media @desktop-widths {
+  .page-footer {
+    padding-top: 30px;
+    padding-bottom: 38px;
+  }
+
+  .contacts-items {
+    flex-direction: row;
+  }
+
+  .page-footer__logo {
+    margin-right: 25px;
+    margin-bottom: 0;
+  }
+
+  .page-footer .logo__stars {
+    fill: #283645;
+  }
+}

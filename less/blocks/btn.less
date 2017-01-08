@@ -1,0 +1,148 @@
+@import "../mixins";
+@import "../variables";
+
+.btn {
+  display: block;
+  margin-bottom: 30px;
+  font-weight: @bold;
+  font-size: @font-size--big;
+  line-height: 18px;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: 0.3s;
+  cursor: pointer;
+
+  &--submit {
+    width: 100%;
+    margin-bottom: 38px;
+    padding: 21px 45px;
+    color: @white;
+    background-color: @green;
+    border: 2px solid @green;
+    border-radius: 3px;
+    outline: none;
+
+    &:hover {
+      background-color: #1c9b5e;
+    }
+
+    &:active {
+      color: #61b98f;
+      background-color: #1c9b5e;
+    }
+  }
+
+  &--popup {
+    width: 100%;
+    padding: 21px 45px;
+    color: @white;
+    background-color: @green;
+    border: 2px solid @green;
+    border-radius: 3px;
+    outline: none;
+    margin: 0;
+  }
+
+  &--post {
+    display: block;
+    margin-bottom: 12px;
+    padding: 15px 87px;
+    color: #d22a58;
+    text-transform: none;
+    border: 3px solid #d22a58;
+    border-radius: 32px;
+
+    &:hover {
+      color: @white;
+      background-color: @red;
+    }
+
+    &:active {
+      color: #e06989;
+      background-color: @red;
+    }
+  }
+
+  &--cancel {
+    display: block;
+    padding: 15px 87px;
+    color: #dddfe0;
+    text-transform: none;
+    border: 3px solid #dddfe0;
+    border-radius: 32px;
+
+    &:hover {
+      color: #b5b9be;
+      border-color: #b5b9be;
+    }
+
+    &:active {
+      color: #cbced2;
+      background-color: #b5b9be;
+      border-color: #b5b9be;
+    }
+  }
+
+  &--download {
+    padding-top: 14px;
+    padding-bottom: 14px;
+    font-weight: @bold;
+    font-size: @font-size--big;
+    color: @white;
+    text-transform: none;
+    text-decoration: none;
+    border: 3px solid @white;
+    border-radius: 27px;
+
+    &:hover {
+      color: @red;
+      background-color: @white;
+    }
+
+    &:active {
+      color: rgba(210, 40, 86, 0.3);
+    }
+  }
+}
+
+//TABLET MODE//
+
+@media @tablet-widths {
+  .btn {
+    &--download {
+      margin: 0 auto;
+    }
+
+    &--submit {
+      width: 300px;
+    }
+
+    &--post {
+      margin-bottom: 24px;
+      padding: 13px 98px 13px 75px;
+    }
+  }
+}
+
+//DESKTOP MODE//
+
+@media @desktop-widths {
+  .btn {
+    &--download {
+      margin: 0 auto;
+      padding: 12px 0;
+      font-size: 21 px;
+    }
+
+    &--post {
+      margin-right: 41px;
+      margin-bottom: auto;
+      padding: 15px 40px;
+    }
+
+    &--cancel {
+      padding: 14px 52px 15px 53px;
+    }
+  }
+}

@@ -1,0 +1,47 @@
+@import "variables.less";
+
+.clearfix {
+
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+.container {
+  padding-left: 20px;
+  padding-right: 20px;
+  width: auto;
+
+  @media @tablet-widths {
+    width: auto;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  @media @desktop-widths {
+    width: 960px;
+    padding-left: 40px;
+    padding-right: 40px;
+    margin: 0 auto;
+  }
+}
+
+.container-fluid {
+  width: 87.5%;
+  max-width: 940px;
+  margin: 0 auto;
+
+  @media @mobile-widths {
+    width: 87.5%;
+  }
+
+  @media @tablet-widths {
+    width: 88.57%;
+  }
+
+  @media @desktop-widths {
+    width:97.9166%;
+  }
+}

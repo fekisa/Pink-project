@@ -1,0 +1,159 @@
+@import "../mixins";
+@import "../variables";
+
+.photo__hot {
+  position: relative;
+  .container-fluid;
+
+  &:before {
+    content: "Панорама дня";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 140px;
+    height: 36px;
+    font-weight: 700;
+    font-size: @font-size--small;
+    line-height: 36px;
+    text-align: center;
+    color: @white;
+    text-transform: uppercase;
+    background-color: @red;
+  }
+}
+
+.photo__image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.photo__description {
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+  padding-right: 18px;
+  padding-bottom: 20px;
+  padding-left: 18px;
+  font-size: @font-size;
+  line-height: 24px;
+  background-color: @light-gray;
+
+  &--top {
+    box-sizing: border-box;
+    .container-fluid;
+  }
+}
+
+.photo__name {
+  font-weight: @bold;
+  font-style: normal;
+}
+
+.photo__time {
+  font-weight: @light;
+  font-size: @font-size--small;
+  text-transform: uppercase;
+}
+
+.photo__text {
+  margin: 0;
+  margin-top: -2px;
+  margin-bottom: 7px;
+}
+
+.photo__footer {
+  display: flex;
+  align-items: baseline;
+  margin-top: auto;
+  color: @red;
+}
+
+.photo__heart {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 17px;
+
+  svg {
+    width: 13px;
+    height: 13px;
+    transition: 0.3s;
+  }
+}
+
+.photo__like {
+  font-size: @font-size--small;
+  text-transform: uppercase;
+}
+
+//TABLET MODE//
+
+@media @tablet-widths {
+  .photo__hot {
+    top: 58px;
+  }
+
+  .photo__image {
+
+    &--top {
+      height: 504px;
+    }
+  }
+
+  .photo__description {
+    position: relative;
+    min-height: 108px;
+    padding-top: 25px;
+    padding-right: 28px;
+    padding-bottom: 25px;
+    padding-left: 28px;
+    color: @light-blue;
+
+    &--top {
+      min-height: auto;
+    }
+  }
+
+  .photo__description--top {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-start;
+
+    .photo__header {
+      flex-grow: 1;
+    }
+
+    .photo__text {
+      order: 1;
+      width: 100%;
+    }
+
+    .photo__footer {
+      margin-top: 0;
+    }
+  }
+
+  .photo__footer {
+    justify-content: space-between;
+  }
+
+  .photo__heart {
+    order: 1;
+    margin-right: 0;
+  }
+
+  .photo__description--top .photo__heart {
+    margin-left: 18px;
+  }
+}
+
+//DESKTOP MODE//
+
+@media @desktop-widths {
+  .photo__image {
+  }
+
+  .photo__description {
+    padding-bottom: 20px;
+  }
+}

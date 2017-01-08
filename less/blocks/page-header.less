@@ -1,0 +1,95 @@
+@import "../mixins";
+@import "../variables";
+
+.page-header {
+  position: absolute;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  padding: 20px 0;
+  color: @white;
+  background-color: rgba(0,0,0,0.2);
+}
+
+.page-header__wrapper {
+  display: flex;
+  justify-content: space-between;
+  .container-fluid;
+}
+
+.logo {
+  display: block;
+}
+
+.logo__header {
+  width: 74px;
+  height: 24px;
+  fill: @white;
+
+  &:hover {
+    fill: @red;
+  }
+
+  &:active {
+    opacity: 0.3;
+    fill: white;
+  }
+}
+
+.logo__tablet,
+.logo__desktop {
+  display: none;
+}
+
+//TABLET MODE//
+
+@media @tablet-widths {
+  .page-header__wrapper {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+  .logo__header {
+    width: 147px;
+    height: 40px;
+
+    &:hover .logo__glasses {
+      fill: @red;
+    }
+
+    .logo__glasses {
+      fill: @white;
+    }
+  }
+
+  .logo__mobile,
+  .logo__desktop {
+    display: none;
+  }
+
+  .logo__tablet {
+    display: inline;
+  }
+}
+
+//DESKTOP MODE//
+
+@media @desktop-widths {
+  .logo__header {
+    width: 147px;
+    height: 40px;
+  }
+
+  .logo__desktop {
+    display: inline;
+  }
+
+  .logo__mobile,
+  .logo__tablet {
+    display: none;
+  }
+
+  .logo__stars {
+    fill: @red;
+  }
+}

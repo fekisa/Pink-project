@@ -1,0 +1,188 @@
+@import "../mixins";
+@import "../variables";
+
+.reviews {
+  position: relative;
+  padding-bottom: 61px;
+
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: @light-gray;
+    transform: skewY(-4deg);
+  }
+}
+
+.reviews__wrapper {
+  position: relative;
+  padding-top: 30px;
+  padding-bottom: 80px;
+  .container-fluid;
+}
+
+.carousel {
+  position: relative;
+}
+
+.carousel-inner {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.carousel-open:checked + .reviews-item {
+  position: static;
+  opacity: 100;
+}
+
+.carousel-control {
+  position: absolute;
+  top: 50%;
+  z-index: 10;
+  display: none;
+  width: 40px;
+  height: 40px;
+  font-weight: @light;
+  font-size: 40px;
+  line-height: 35px;
+  text-align: center;
+  color: @dark-gray;
+  border-radius: 50%;
+  transform: translate(0, -50%);
+  cursor: pointer;
+
+  &:hover {
+    .carousel__svg {
+      fill: #7e868f;
+    };
+  }
+
+  &:active {
+    .carousel__svg {
+    fill: #e9ebec;
+    }
+  }
+}
+
+.carousel-control.prev {
+  left: 2%;
+}
+
+.carousel-control.next {
+  right: 2%;
+}
+
+#carousel-1:checked ~ .control-1,
+#carousel-2:checked ~ .control-2,
+#carousel-3:checked ~ .control-3 {
+  display: none;
+}
+
+.carousel-dots {
+  position: absolute;
+  left: 50%;
+  bottom: -45px;
+  display: block;
+  width: 78px;
+  margin-left: -39px;
+  list-style: none;
+  text-align: center;
+}
+
+.carousel-dots label {
+  display: block;
+  float: left;
+  box-sizing: border-box;
+  width: 12px;
+  height: 12px;
+  margin: 6px;
+  font-size: 0;
+  background: @dark-gray;
+  border-radius: 50%;
+  border: 3px solid white;
+}
+
+.carousel-dots label:hover {
+  background: @light-blue;
+  cursor: pointer;
+}
+
+.carousel__svg {
+  width: 27px;
+  height: 44px;
+  fill: @dark-gray;
+}
+
+#carousel-1:checked ~ .control-1 ~ .carousel-dots label#dot-carousel-1,
+#carousel-2:checked ~ .control-2 ~ .carousel-dots label#dot-carousel-2,
+#carousel-3:checked ~ .control-3 ~ .carousel-dots label#dot-carousel-3 {
+  background: transparent;
+  border: 3px solid @light-blue;
+}
+
+//TABLET MODE//
+
+@media @tablet-widths {
+  .reviews {
+    padding-bottom: 52px;
+  }
+
+  .reviews__wrapper {
+    padding-top: 59px;
+  }
+
+  .carousel-dots {
+    bottom: -41px;
+  }
+}
+
+//DESKTOP MODE//
+
+@media @desktop-widths {
+  .reviews {
+    padding-bottom: 31px;
+  }
+
+  .reviews__wrapper {
+    padding-top: 181px;
+
+    &:before {
+      content: "";
+      position: absolute;
+      display: block;
+      width: 200px;
+      height: 105px;
+      background-image: url('../img/icon-quotes.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 78px 63px;
+      top: 49px;
+      left: 373px;
+    }
+  }
+  .carousel-control {
+    top: 24%;
+  }
+
+  .carousel-control.prev {
+    left: -1%;
+  }
+
+  .carousel-control.next {
+    right: -1%;
+  }
+
+  .carousel-dots {
+    display: none;
+  }
+
+  #carousel-1:checked ~ .control-1,
+  #carousel-2:checked ~ .control-2,
+  #carousel-3:checked ~ .control-3 {
+    display: block;
+  }
+}

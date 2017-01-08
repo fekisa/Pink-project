@@ -1,0 +1,91 @@
+@import "../mixins";
+@import "../variables";
+
+.download-app {
+  z-index: 100;
+  font-weight: @light;
+  color: @white;
+  background-color: @dark-blue;
+}
+
+.download-app__wrapper {
+  padding-top: 28px;
+  padding-bottom: 22px;
+  .container-fluid;
+}
+
+.download-app__platforms {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  max-width: 235px;
+  margin: 33px auto 27px;
+}
+
+.download-app__description {
+  margin: 10px 0;
+  line-height: 20px;
+  text-align: center;
+}
+
+.platform {
+  font-size: 0;
+
+  &--apple {
+    width: 47px;
+    height: 56px;
+    background: url(../img/logo-apple.svg) no-repeat;
+  }
+
+  &--android {
+    width: 43px;
+    height: 47px;
+    background: url(../img/logo-android.svg) no-repeat center;
+  }
+
+  &--windows {
+    width: 44px;
+    height: 41px;
+    background: url(../img/logo-microsoft.svg) no-repeat center;
+  }
+}
+
+//TABLET MODE//
+
+@media @tablet-widths {
+  .download-app {
+    font-size: @font-size--big;
+    background: 0 0;
+  }
+
+  .download-app__wrapper {
+    width: 300px;
+    padding: 5px 0;
+  }
+
+  .download-app__platforms {
+    margin-top: 46px;
+    margin-bottom: 38px;
+  }
+
+  .download-app__description {
+    width: 300px;
+    padding: 0;
+    line-height: 24px;
+  }
+}
+
+//DESKTOP MODE//
+
+@media @desktop-widths {
+  .download-app__wrapper {
+    width: 300px;
+    padding: 34px 0;
+  }
+
+  .download-app__platforms {
+    margin-top: 72px;
+    margin-bottom: 49px;
+  }
+}

@@ -1,0 +1,145 @@
+.popup {
+  outline: 2px solid green;
+  position: absolute;
+  z-index: 1000;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 16px 20px 0 #dfdfdf,
+              0 2px 10px 0 #fbfbfb;
+
+  &--fail {
+    padding-top: 23px;
+    top: 1166px;
+    left: 0;
+    background-color: @white;
+  }
+
+  &--success {
+    top: 1664px;
+    left: 0;
+    background-color: @white;
+  }
+
+  &--hide {
+    display: none;
+  }
+}
+
+.popup__wrapper {
+  max-width: 940px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.popup__inner {
+  width: 280px;
+  margin: 0 auto;
+}
+
+.popup__title {
+  font-size: @font-size--big;
+  color: @light-blue;
+  margin-bottom: 29px;
+  font-weight: @bold;
+}
+
+.popup__text {
+  line-height: 24px;
+  margin-bottom: 35px;
+}
+
+.popup__footer {
+  padding-bottom: 50px;
+}
+
+.popup--success .popup__footer {
+    background-color: #f2f2f2;
+    padding: 48px 0;
+  }
+
+.popup--success .popup__text {
+    margin-bottom: 27px;
+  }
+
+//TABLET MODE//
+
+@media @tablet-widths {
+  .popup {
+    position: absolute;
+    width: 460px;
+
+    &--fail {
+      top: 425px;
+      left: 75px;
+    }
+
+    &--success {
+      top: 921px;
+      left: 75px;
+
+      & br {
+        display: none;
+      }
+    }
+  }
+
+  .popup__inner {
+    width: 300px;
+    margin: 0 auto;
+  }
+
+  .popup__title {
+    font-size: 30px;
+    line-height: 1.333em;
+    width: 260px;
+    margin-left: 20px;
+    margin-bottom: 26px;
+  }
+
+  .popup__text {
+    font-size: @font-size--big;
+    line-height: 1.333em;
+    width: 306px;
+  }
+
+  .popup--fail .popup__text {
+    margin-bottom: 40px;
+  }
+
+  .popup--success .popup__text {
+    margin-bottom: 37px;
+    width: 306px;
+  }
+}
+
+//DESKTOP MODE//
+
+@media @desktop-widths {
+  .popup {
+
+    &--fail {
+      left: 241px;
+      top: 407px;
+      padding: 0;
+    }
+
+    &--success {
+      left: 84px;
+      top: 842px;
+      width: 782px;
+      padding-top: 22px;
+    }
+  }
+
+  .popup--success .popup__inner {
+    width: 460px;
+  }
+
+  .popup--success .popup__title {
+    width: 400px;
+  }
+
+  .popup--success .popup__text {
+    width: 443px;
+  }
+}

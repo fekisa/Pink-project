@@ -1,0 +1,42 @@
+@import "../mixins";
+@import "../variables";
+
+.price {
+  background: @light-gray;
+  overflow: hidden;
+}
+
+.price__wrapper {
+  position: relative;
+  padding-top: 26px;
+  padding-bottom: 96px;
+  .container-fluid;
+}
+
+//TABLET MODE//
+
+@media @tablet-widths {
+
+  .price {
+    background-size: 100%, 56px;
+  }
+
+  .price__wrapper {
+    padding-top: 8px;
+    padding-bottom: 70px;
+  }
+}
+
+//DESKTOP MODE//
+
+@media @desktop-widths {
+
+  .price {
+    background-size: 100%, 94px;
+  }
+
+  .price__wrapper {
+    padding-top: 62px;
+    padding-bottom: 94px;
+  }
+}

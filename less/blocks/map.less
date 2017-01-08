@@ -1,0 +1,79 @@
+@import "../mixins";
+@import "../variables";
+
+.map {
+  position: relative;
+  min-height: 200px;
+  overflow: hidden;
+  background: url(../img/bg-map-mobile@1x.png) no-repeat center;
+  background-size: cover;
+  background-color: @dark-gray;
+
+  &:before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    border-top: 35px solid @white;
+    border-right: 50vw solid transparent;
+    border-left: 50vw solid transparent;
+  }
+}
+
+//TABLET MODE//
+
+@media @tablet-widths {
+  .map {
+    height: 376px;
+    background: url(../img/icon-map-marker.svg) no-repeat bottom 10% center, url(../img/bg-map-tablet@1x.jpg) no-repeat center;
+    background-size: 30px, cover;
+
+    &:before {
+      border-top: 70px solid @white;
+    }
+  }
+}
+
+//DESKSTOP MODE//
+
+@media @desktop-widths {
+  .map {
+    height: 500px;
+    margin-top: -5px;
+    margin-bottom: 33px;
+    background: url(../img/icon-map-marker.svg) no-repeat bottom 35% center, url(../img/bg-map-desktop@1x.jpg) no-repeat center;
+    background-size: 30px, cover;
+
+    &:before {
+      border-top: 100px solid @white;
+    }
+  }
+}
+
+
+//RETINA//
+@media  @mobile-widths and (min-resolution: 144dpi),
+        @mobile-widths and (min-resolution: 1.5dppx) {
+          .map {
+            background: url(../img/bg-map-mobile@2x.jpg) no-repeat center;
+            background-size: cover;
+          }
+        }
+
+@media  @tablet-widths and (min-resolution: 144dpi),
+        @tablet-widths and (min-resolution: 1.5dppx) {
+          .map {
+            background: url(../img/icon-map-marker.svg) no-repeat bottom 10% center, url(../img/bg-map-tablet@2x.jpg) no-repeat center;
+            background-size: 30px, cover;
+          }
+        }
+
+@media  @desktop-widths and (min-resolution: 144dpi),
+        @desktop-widths and (min-resolution: 1.5dppx) {
+          .map {
+            background: url(../img/icon-map-marker.svg) no-repeat bottom 35% center, url(../img/bg-map-desktop@2x.jpg) no-repeat center;
+            background-size: 30px, cover;
+          }
+        }

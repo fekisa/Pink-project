@@ -1,0 +1,40 @@
+@import "../mixins";
+@import "../variables";
+
+.photos__item {
+  width: 100%;
+  margin-bottom: 22px;
+
+  &--top {
+    width: 100%;
+  }
+}
+
+//TABLET MODE//
+
+@media @tablet-widths {
+  .photos__item {
+    width: 48%;
+    margin-bottom: 19px;
+
+    &--top {
+      width: 100%;
+      margin-bottom: 50px;
+    }
+  }
+}
+
+//DESKTOP MODE//
+
+@media @desktop-widths {
+
+  .photos__item {
+    width: 32%;
+    margin-bottom: 54px;
+
+    &--top {
+      width: 100%;
+      margin-bottom: 50px;
+    }
+  }
+}

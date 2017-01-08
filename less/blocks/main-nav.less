@@ -1,0 +1,163 @@
+@import "../mixins";
+@import "../variables";
+
+.burger {
+  display: inline-block;
+  vertical-align: baseline;
+  width: 50px;
+  height: 25px;
+  padding: 0;
+  background: none;
+  border: 0;
+  border-bottom: 4px solid @white;
+  outline: 0;
+  cursor: pointer;
+
+  &:before {
+    content: "";
+    display: block;
+    width: 100%;
+    margin-bottom: 8px;
+    border-bottom: 4px solid @white;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  &:after {
+    content: "";
+    display: block;
+    width: 100%;
+    margin-bottom: 6px;
+    border-bottom: 4px solid @white;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  &:hover {
+    border-bottom: 4px solid @red;
+    transition: none;
+
+    &:before {
+      border-bottom: 4px solid @red;
+    }
+
+    &:after {
+      border-bottom: 4px solid @red;
+    }
+  }
+}
+
+.burger-check {
+  display: none;
+}
+
+.burger-check:checked ~ .burger {
+  border-bottom: 4px solid transparent;
+  transition: border-bottom 0.2s ease-in-out;
+  transform: translateY(10px);
+
+  &:before {
+    transform: rotate(-45deg) translateY(3px) translateX(-3px);
+    transition: transform 0.2s ease-in-out;
+  }
+
+  &:after {
+    transform: rotate(45deg) translateY(-4px) translateX(-5px);
+    transition: transform 0.2s ease-in-out;
+  }
+}
+
+.main-nav {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: none;
+  width: 100%;
+  border-top: 1px solid black;
+}
+
+.burger-check:checked ~ .main-nav {
+  display: block;
+}
+
+.main-nav__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.main-nav__item {
+  background-color: @light-blue;
+  border-bottom: 1px solid #000000;
+}
+
+.main-nav__link {
+  display: block;
+  padding: 20px 0;
+  font-weight: @bold;
+  font-size: @font-size--big;
+  text-align: center;
+  color: @link-color;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-top: 1px solid #485461;
+
+  &:hover {
+    color: @link-color-hover;
+  }
+
+  &:active {
+    color: @link-color;
+  }
+}
+
+//TABLET MODE//
+
+@media @tablet-widths {
+  .burger {
+    margin-top: 12px;
+  }
+}
+
+//DESKSTOP MODE//
+
+@media @desktop-widths {
+  .burger {
+    display: none;
+  }
+
+  .main-nav {
+    position: static;
+    display: block;
+    border-top: none;
+  }
+
+  .main-nav__list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .main-nav__item {
+    margin-left: 10%;
+    background-color: transparent;
+    border-bottom: none;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  .main-nav__link {
+    padding: 10px 0;
+    font-weight: @normal;
+    text-transform: none;
+    border: none;
+
+    &:hover {
+      padding-bottom: 8px;
+      color: @white;
+      border-bottom: 2px solid @white;
+    }
+  }
+}

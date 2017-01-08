@@ -1,0 +1,83 @@
+@import "../mixins";
+@import "../variables";
+
+.page-form {
+  padding-top: 32px;
+}
+
+.page-form__description {
+  font-weight: @normal;
+  font-size: @font-size;
+  line-height: 30px;
+  text-align: center;
+  .container-fluid;
+}
+
+.page-form__text {
+  font-weight: @normal;
+  font-size: @font-size;
+  line-height: 30px;
+
+  &--hidden {
+    display: none;
+  }
+}
+
+.page-form__wrapper--photo {
+  padding-bottom: 35px;
+}
+
+//TABLET MODE//
+
+@media @tablet-widths {
+  .page-form {
+  }
+
+  .page-form__wrapper {
+    .container-fluid;
+    position: relative;
+  }
+
+  .page-form__description {
+    width: auto;
+    padding: 48px 62px;
+
+    &--photo {
+      padding-top: 43px;
+      padding-bottom: 25px;
+    }
+
+    br {
+      display: none;
+    }
+  }
+
+  .page-form__text {
+    font-size: @font-size--big;
+
+    &--hidden {
+      display: block;
+    }
+  }
+}
+
+//DESKTOP MODE//
+
+@media @desktop-widths {
+  .page-form__description {
+    width: 600px;
+    padding: 41px 0;
+
+    &--width {
+      width: 750px
+    }
+  }
+
+  .page-form__text {
+
+    &--hidden {
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+}
